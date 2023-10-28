@@ -8,9 +8,7 @@ export const MyHeader: React.FC = () => {
   return (
     <S.Header>
       <S.LogoText>Hanum•</S.LogoText>
-      <S.IconBox>
-        <FontAwesome5 name="headset" size={24} color="gray" />
-      </S.IconBox>
+      <S.Emoge>🎧</S.Emoge>
     </S.Header>
   );
 };

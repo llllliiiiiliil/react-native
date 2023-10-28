@@ -1,20 +1,15 @@
-import React from "react";
-import * as S from "./style";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
-import { FontAwesome5 } from "@expo/vector-icons";
+import React, { useState } from "react";
+import { PartyContainer } from "./container";
+import { PartyAction } from "./action";
+import { PartyView } from "./view";
 
 export const Party: React.FC = () => {
+  const { setIsHover } = PartyContainer();
+  const actions = PartyAction({ setIsHover });
+
   return (
     <>
-      <S.PartyContainer>
-        <MaterialCommunityIcons name="party-popper" size={45} color="black" />
-        <S.PartyTextBox>
-          <S.PartyText>한세어울림마단 진행 중!</S.PartyText>
-          <S.PartySecondText>실시간으로 즐기기</S.PartySecondText>
-        </S.PartyTextBox>
-        <MaterialIcons name="keyboard-arrow-right" size={24} color="black" />
-      </S.PartyContainer>
+      <PartyView {...actions} />
     </>
   );
 };

@@ -1,10 +1,13 @@
 import styled, { css } from "@emotion/native";
 
 export const Header = styled.View`
-  padding: 10px;
+  padding: 10px 20px;
   margin-top: 25px;
   width: 100%;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const LogoText = styled.Text`
@@ -12,8 +15,6 @@ export const LogoText = styled.Text`
   font-weight: 900;
 `;
 
-export const IconBox = styled.Text`
-  position: absolute;
-  right: 15;
-  top: 20;
+export const Emoge = styled.Text`
+  font-size: 20px;
 `;
