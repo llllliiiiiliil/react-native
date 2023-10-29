@@ -10,13 +10,13 @@ export const HanumpayAction = () => {
     setIsPressed(true);
     Animated.timing(fadeAnim, {
       toValue: 0.1,
-      duration: 200,
+      duration: 2000,
       easing: Easing.bezier(0.42, 0, 0.58, 1),
       useNativeDriver: false,
     }).start(() => {
       Animated.timing(fadeAnim, {
         toValue: 1,
-        duration: 200,
+        duration: 2000,
         easing: Easing.bezier(0.42, 0, 0.58, 1),
         useNativeDriver: false,
       }).start(() => {
