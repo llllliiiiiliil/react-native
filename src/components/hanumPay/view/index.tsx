@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { View, TouchableOpacity, Text, Animated, Easing } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import * as S from "../style";
-import { View, Text } from "react-native";
+import { colors } from "../../../style/color";
+import { HanumpayAction } from "../action";
 
-type HanumPayViewType = {
-  colorChange: () => void;
-};
+export const HanumpayView = () => {
+  const { isPressed, handlePress, fadeAnim } = HanumpayAction();
 
-export const HanumpayView: React.FC<HanumPayViewType> = (props) => {
-  const [isTouch, setIsTouch] = React.useState(false);
+  const animatedStyle = {
+    opacity: fadeAnim,
+  };
 
   return (
     <S.HanumpayBox>
-      <S.BoxInfo activeOpacity={0.7} onPress={props.colorChange}>
+      <Animated.View style={animatedStyle}></Animated.View>
+      <S.BoxInfo
+        onPress={handlePress}
+        activeOpacity={1}
+        style={{
+          backgroundColor: isPressed ? colors.lightGray : colors.background,
+        }}
+      >
         <View
           style={{
             display: "flex",
@@ -24,7 +33,7 @@ export const HanumpayView: React.FC<HanumPayViewType> = (props) => {
           <S.title>한움페이</S.title>
         </View>
 
-        <MaterialIcons name="keyboard-arrow-right" size={24} color="gray" />
+        <MaterialIcons name="keyboard-arrow-right" size={24} />
       </S.BoxInfo>
       <S.MoneyBox>
         <S.MoneyText>0원</S.MoneyText>
@@ -35,3 +44,5 @@ export const HanumpayView: React.FC<HanumPayViewType> = (props) => {
     </S.HanumpayBox>
   );
 };
+
+export default HanumpayView;

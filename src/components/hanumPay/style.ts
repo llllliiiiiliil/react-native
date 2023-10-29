@@ -1,5 +1,7 @@
 import styled from "@emotion/native";
 import { HanumPayAction } from "./action";
+import { colors } from "../../style/color";
+import { HanumPay } from ".";
 
 export const HanumpayBox = styled.View`
   width: 90%;

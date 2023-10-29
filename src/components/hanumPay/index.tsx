@@ -1,11 +1,11 @@
 import React from "react";
 import { HanumpayView } from "./view";
 import { HanumPayContainer } from "./container";
-import { HanumPayAction } from "./action";
+import { HanumpayAction } from "./action";
 
 export const HanumPay = () => {
-  const { setIsClick } = HanumPayContainer();
-  const actions = HanumPayAction({ setIsClick });
+  const { setIsPressed } = HanumPayContainer();
+  const actions = HanumpayAction();
 
-  return <HanumpayView {...HanumPayAction} />;
+  return <HanumpayView {...HanumpayAction} />;
 };

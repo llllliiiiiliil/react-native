@@ -1,4 +1,5 @@
 import styled from "@emotion/native";
+import { View } from "react-native";
 
 export const FooterBox = styled.View`
   width: 100%;
@@ -15,6 +16,12 @@ export const EmogeBox = styled.View`
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
+`;
+
+export const FooterItemBox = styled.View`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Texts = styled.Text`
