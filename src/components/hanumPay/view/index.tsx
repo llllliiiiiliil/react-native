@@ -8,16 +8,11 @@ import { HanumpayAction } from "../action";
 export const HanumpayView = () => {
   const { isPressed, handlePress, fadeAnim } = HanumpayAction();
 
-  const animatedStyle = {
-    opacity: fadeAnim,
-  };
-
   return (
     <S.HanumpayBox>
-      <Animated.View style={animatedStyle}></Animated.View>
       <S.BoxInfo
         onPress={handlePress}
-        activeOpacity={1}
+        activeOpacity={0.8}
         style={{
           backgroundColor: isPressed ? colors.lightGray : colors.background,
         }}
